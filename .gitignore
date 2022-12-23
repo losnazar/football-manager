@@ -20,6 +20,9 @@ target
 *.iml
 *.ipr
 src/main/resources/application.properties
+Dockerfile
+.env
+docker-compose.yml
 
 ### NetBeans ###
 /nbproject/private/
