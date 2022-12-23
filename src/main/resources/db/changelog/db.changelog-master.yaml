@@ -1,0 +1,7 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/changes/create-teams-table.sql
+  - include:
+      file: db/changelog/changes/create-players-table.sql
+  - include:
+      file: db/changelog/changes/insert-data.sql
