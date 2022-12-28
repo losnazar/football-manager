@@ -1,7 +1,6 @@
 package com.example.footballmanager.model;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -20,6 +19,6 @@ public class Player {
     private String lastName;
     private int age;
     private int monthsOfExperience;
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     private Team team;
 }

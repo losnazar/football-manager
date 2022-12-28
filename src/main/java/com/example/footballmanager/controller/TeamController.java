@@ -33,14 +33,16 @@ public class TeamController {
     }
 
     @PostMapping
-    public TeamResponseDto addTeam(@RequestBody @Valid TeamRequestDto requestDto) {
+    public TeamResponseDto addTeam(@RequestBody @Valid
+                                               TeamRequestDto requestDto) {
         Team team = teamService.save(requestMapper.toModel(requestDto));
         return responseMapper.toDto(team);
     }
 
     @PutMapping("/{id}")
     public TeamResponseDto updateTeam(@PathVariable Long id,
-                                      @RequestBody TeamRequestDto teamRequestDto) {
+                                      @RequestBody @Valid
+                                              TeamRequestDto teamRequestDto) {
         Team team = requestMapper.toModel(teamRequestDto);
         team.setId(id);
         return responseMapper.toDto(teamService.update(team));

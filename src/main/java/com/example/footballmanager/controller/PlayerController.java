@@ -33,14 +33,16 @@ public class PlayerController {
     }
 
     @PostMapping
-    public PlayerResponseDto addPlayer(@RequestBody @Valid PlayerRequestDto playerRequestDto) {
+    public PlayerResponseDto addPlayer(@RequestBody @Valid
+                                                   PlayerRequestDto playerRequestDto) {
         Player player = playerService.save(requestMapper.toModel(playerRequestDto));
         return responseMapper.toDto(player);
     }
 
     @PutMapping("/{id}")
     public PlayerResponseDto updatePlayer(@PathVariable Long id,
-                                          @RequestBody PlayerRequestDto playerRequestDto) {
+                                          @RequestBody @Valid
+                                                  PlayerRequestDto playerRequestDto) {
         Player player = requestMapper.toModel(playerRequestDto);
         player.setId(id);
         return responseMapper.toDto(playerService.update(player));
